@@ -3,13 +3,13 @@
 #include <WiFiClient.h>
 
 float ondo = 38.3;
-const char* ssid     = "yutayのiPhone";  //変更点
-const char* password = "Tsu10711";      //変更点
+const char* ssid     = "WIFI-SSID";           //変更点
+const char* password = "WIFI-PASSWORD";       //変更点
 
-String makerEvent = "thermal_mail"; // Maker Webhooks
-String makerKey = "brc6Zplml_dErA2kakoJrQ"; // Maker Webhooks
+String makerEvent = "thermal_mail";           // Maker Webhooks
+String makerKey = "brc6Zplml_dErA2kakoJrQ";   // Maker Webhooks
 
-const char* server = "maker.ifttt.com";  // Server URL
+const char* server = "maker.ifttt.com";       // Server URL
 WiFiClient client;
 
 bool checkWifiConnected() {
