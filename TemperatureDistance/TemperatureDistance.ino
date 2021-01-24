@@ -81,7 +81,7 @@ void loop() {
       int j =  judge( data/20 , distance ) ;
       if( j == 1 ){
         allowedSound();
-        allowedDislplay();
+        allowedDisplay();
       }else if( j == 2){
         ambiguousSound();
         ambiguousDisplay();
@@ -133,7 +133,7 @@ int judge(float thermal, int distance){
 
   if(thermal >= 35.0 && thermal <= 36.9){
     return 1;
-  }else if(thermal <35.0 || (thermal >= 37.0 && themal <= 37.4)){
+  }else if(thermal <35.0 || (thermal >= 37.0 && thermal <= 37.4)){
     return 2;
   }else if(thermal > 37.5){
     return 3;
@@ -141,7 +141,6 @@ int judge(float thermal, int distance){
 }
 
 void  allowedSound(){
-  allowedDisplay();
   M5.Speaker.tone(scale[11]);
   delay(300);
   M5.Speaker.tone(scale[8]);
@@ -153,8 +152,7 @@ void  allowedSound(){
   M5.Speaker.end();
 }
 
-void ambigousSound(){
-  ambiguousDisplay();
+void ambiguousSound(){
   M5.Speaker.tone(scale[12]);
   delay(300);
   M5.Speaker.tone(scale[11]);
@@ -167,7 +165,6 @@ void ambigousSound(){
 }
 
 void notallowedSound(){
-  notAllowedDisplay();
   M5.Speaker.tone(scale[14] + 30);
   delay(300);
   M5.Speaker.tone(scale[13] + 10);
@@ -187,10 +184,9 @@ void ambiguousDisplay(){
   writeInCenter("RETRY", TFT_BLACK, AMBIGUOUS_COLOR);
 }
 
-void notAllowedDisplay(){
+void notallowedDisplay(){
   writeInCenter("GO HOME!", TFT_WHITE, NOT_ALLOWED_COLOR);
 }
-
 
 void writeInCenter(String text, int text_color, int bg_color){
   int xpos = 160;
